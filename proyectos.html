@@ -13,12 +13,12 @@
     />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-  </head>
+</head>
   <body>
      <!-- Navegacion -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#"></i> <img src="img/logo fabydev2.png" alt=""></a>
+            <a class="navbar-brand" href="#"><img src="img/logo fabydev2.png" alt="FabyDev"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -45,46 +45,260 @@
     <section id="proyectos" class="hero-section-proyectos">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-12 hero-content">
-                    <h1 class="hero-title">Proyectos</h1>
+                <div class="col-lg-12 hero-content text-center">
+                    <h1 class="hero-title">Mis Proyectos</h1>
                     <p class="hero-subtitle">Colección de proyectos desarrollados para enseñar y motivar a estudiantes en su camino por el mundo de la programación.</p>
-
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Blog Section -->
+    <!-- Proyectos Section -->
     <section id="blog" class="section-padding">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <div class="blog-card text-center">
-                        <iframe src="https://scratch.mit.edu/projects/443009698/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
-                        <div class="p-4">
-                            <h5>Tenis en el espacio</h5>
-                            <p class="text-muted mb-3">
-                                Juego desarrollado en Scratch como proyecto final del programa "Jóvenes Programadores" (Chile). Consiste en una raqueta espacial que se controla con el mouse y debe evitar que una pelota caiga al vacío.
+            <div class="row g-4">
+
+                <!-- Proyecto 1: IoT API Development -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <div class="project-content">
+                            <h5 class="project-title">IoT API Development</h5>
+                            <div class="project-tags">
+                                <span class="tag java">Java</span>
+                                <span class="tag spring">Spring Boot</span>
+                                <span class="tag">PostgreSQL</span>
+                            </div>
+                            <p class="project-description">
+                                API robusta para recibir y procesar datos de dispositivos IoT mineros (ESP32 y Zigbee). Implementa TCP/IP, MQTT, seguridad de datos y almacenamiento escalable.
                             </p>
-                            <small class="text-muted">03 de junio de 2025</small>
+                            <a href="https://github.com/fabyDiaz/Proyecto-final-e1" class="btn-repo">
+                                <i class="fab fa-github"></i>
+                                Ver Repositorio
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="blog-card">
-                        <div class="blog-image">
-                            <i class="fas fa-code"></i>
+
+                <!-- Proyecto 2: Tienda Elixir Game -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-gamepad"></i>
                         </div>
-                        <div class="p-4">
-                            <h5>Así funciona la red de control distribuida CSS</h5>
-                            <p class="text-muted mb-3">El CSS Grid es una herramienta poderosa para crear diseños web complejos...</p>
-                            <small class="text-muted">28 de abril de 2024</small>
+                        <div class="project-content">
+                            <h5 class="project-title">Tienda Elixir Game</h5>
+                            <div class="project-tags">
+                                <span class="tag kotlin">Kotlin</span>
+                                <span class="tag android">Android</span>
+                                <span class="tag">MVVM</span>
+                            </div>
+                            <p class="project-description">
+                                Aplicación Android que simula una tienda de videojuegos con arquitectura MVVM y Clean Architecture. Incluye consumo de API REST y navegación entre fragmentos.
+                            </p>
+                            <a href="https://github.com/fabyDiaz/TiendaElixirGame" class="btn-repo">
+                                <i class="fab fa-github"></i>
+                                Ver Repositorio
+                            </a>
                         </div>
                     </div>
                 </div>
+
+                <!-- Proyecto 3: Aplicación de Música Android -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div class="project-content">
+                            <h5 class="project-title">Aplicación de Música</h5>
+                            <div class="project-tags">
+                                <span class="tag android">Android</span>
+                                <span class="tag">XML</span>
+                                <span class="tag">Lifecycle</span>
+                            </div>
+                            <p class="project-description">
+                                Primera aplicación Android enfocada en el manejo del ciclo de vida de Activity. Incluye diseño adaptable con layouts para orientación landscape.
+                            </p>
+                            <a href="https://github.com/fabyDiaz/ReproductorDeMusicaAndroid" class="btn-repo">
+                                <i class="fab fa-github"></i>
+                                Ver Repositorio
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 4: AlkeWallet -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <div class="project-content">
+                            <h5 class="project-title">AlkeWallet</h5>
+                            <div class="project-tags">
+                                <span class="tag kotlin">Kotlin</span>
+                                <span class="tag android">Android</span>
+                                <span class="tag">API REST</span>
+                            </div>
+                            <p class="project-description">
+                                Billetera virtual para seguimiento de tarjetas y gastos con pagos virtuales. Implementa patrón MVVM, API REST y base de datos local.
+                            </p>
+                            <a href="https://github.com/fabyDiaz/Modulo5--Arquitectura-y-ciclo-de-vida-de-componentes-Android/tree/version5" class="btn-repo">
+                                <i class="fab fa-github"></i>
+                                Ver Repositorio
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 5: Inversiones Arenas & Arenas -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <div class="project-content">
+                            <h5 class="project-title">Inversiones Arenas & Arenas</h5>
+                            <div class="project-tags">
+                                <span class="tag wordpress">WordPress</span>
+                                <span class="tag">Divi</span>
+                                <span class="tag">Responsive</span>
+                            </div>
+                            <p class="project-description">
+                                Sitio web informativo para empresa de ingeniería eléctrica y automatización industrial. Diseño moderno y adaptable desarrollado en WordPress con Divi.
+                            </p>
+                            <a href="https://iaaspa.cl/" class="btn-repo">
+                                <i class="fas fa-external-link-alt"></i>
+                                Ver Sitio Web
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 6: Curauma Sabor -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="project-content">
+                            <h5 class="project-title">Curauma Sabor</h5>
+                            <div class="project-tags">
+                                <span class="tag wordpress">WordPress</span>
+                                <span class="tag">WooCommerce</span>
+                                <span class="tag">Divi</span>
+                            </div>
+                            <p class="project-description">
+                                Sitio web One Page con tienda en línea integrada. Experiencia optimizada para conversión con diseño atractivo y responsive en WooCommerce.
+                            </p>
+                            <a href="https://curaumasabor.cl/" class="btn-repo">
+                                <i class="fas fa-external-link-alt"></i>
+                                Ver Sitio Web
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 7: API REST Segura -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="project-content">
+                            <h5 class="project-title">API REST Segura</h5>
+                            <div class="project-tags">
+                                <span class="tag java">Java</span>
+                                <span class="tag spring">Spring Boot</span>
+                                <span class="tag angular">Angular</span>
+                            </div>
+                            <p class="project-description">
+                                API REST con Spring Security, JWT, gestión de usuarios y productos. Incluye frontend en Angular para completar la experiencia full-stack.
+                            </p>
+                            <a href="https://github.com/fabyDiaz/Gestion-de-productos-y-usuarios" class="btn-repo">
+                                <i class="fab fa-github"></i>
+                                Ver Repositorio
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 8: Tenis en el Espacio -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <iframe src="https://scratch.mit.edu/projects/443009698/embed" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                        </div>
+                        <div class="project-content">
+                            <h5 class="project-title">Tenis en el Espacio</h5>
+                            <div class="project-tags">
+                                <span class="tag scratch">Scratch</span>
+                                <span class="tag">Game Dev</span>
+                            </div>
+                            <p class="project-description">
+                                Juego desarrollado como proyecto final del programa "Jóvenes Programadores". Raqueta espacial controlada con mouse para evitar que la pelota caiga al vacío.
+                            </p>
+                            <a href="https://scratch.mit.edu/projects/443009698/fullscreen/" class="btn-repo" target="_blank">
+                                <i class="fas fa-play"></i>
+                                Jugar Ahora
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Espacio para proyectos futuros -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card" style="border: 2px dashed #e2e8f0; opacity: 0.7;">
+                        <div class="project-image" style="background: #f8fafc;">
+                            <i class="fas fa-plus" style="color: #94a3b8;"></i>
+                        </div>
+                        <div class="project-content">
+                            <h5 class="project-title" style="color: #94a3b8;">Próximo Proyecto</h5>
+                            <div class="project-tags">
+                                <span class="tag" style="background: #f1f5f9; color: #94a3b8;">Coming Soon</span>
+                            </div>
+                            <p class="project-description" style="color: #94a3b8;">
+                                Espacio reservado para el próximo proyecto increíble que está en desarrollo.
+                            </p>
+                            <div class="btn-repo" style="background: #e2e8f0; color: #94a3b8; cursor: not-allowed;">
+                                <i class="fas fa-clock"></i>
+                                En Desarrollo
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Otro espacio para proyectos futuros -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card" style="border: 2px dashed #e2e8f0; opacity: 0.7;">
+                        <div class="project-image" style="background: #f8fafc;">
+                            <i class="fas fa-lightbulb" style="color: #94a3b8;"></i>
+                        </div>
+                        <div class="project-content">
+                            <h5 class="project-title" style="color: #94a3b8;">Idea en Proceso</h5>
+                            <div class="project-tags">
+                                <span class="tag" style="background: #f1f5f9; color: #94a3b8;">Planificación</span>
+                            </div>
+                            <p class="project-description" style="color: #94a3b8;">
+                                Nuevo concepto en fase de planificación que pronto se convertirá en realidad.
+                            </p>
+                            <div class="btn-repo" style="background: #e2e8f0; color: #94a3b8; cursor: not-allowed;">
+                                <i class="fas fa-cog"></i>
+                                Planificando
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <div class="text-center">
-                <a href="#" class="btn btn-primary-custom">VER MÁS</a>
+            <div class="text-center mt-5">
+                <a href="#contacto" class="btn btn-primary-custom">
+                    <i class="fas fa-envelope"></i>
+                    Contactar para más proyectos
+                </a>
             </div>
         </div>
     </section>
@@ -139,6 +353,5 @@
       integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
       crossorigin="anonymous"
     ></script>
-    <script src="animacion.js"></script>
   </body>
 </html>
