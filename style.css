@@ -360,6 +360,7 @@ html {
 /* ===============================
    SECCIÓN DE PROYECTOS
    =============================== */
+   /*
 .projects-section {
     background: var(--dark-color);
     color: white;
@@ -372,7 +373,19 @@ html {
 .projects-section .section-title::after {
     background: var(--primary-color);
 }
+*/
+.projects-section {
+    background: white;
+    color: var(--dark-color);
+}
 
+.projects-section .section-title {
+    color: var(--dark-color);
+}
+
+.projects-section .section-title::after {
+    background: var(--primary-color);
+}
 .projects-section img {
     max-width: 40%;
     height: auto;
