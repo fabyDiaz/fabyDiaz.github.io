@@ -430,15 +430,20 @@ html {
     overflow: hidden;
 }
 
-.project-image i {
+
+.project-image i,
+.project-image img {
     font-size: 3rem;
     color: white;
     transition: var(--transition);
 }
 
-.project-card:hover .project-image i {
+.project-image:hover i,
+.project-image:hover img {
     transform: scale(1.1) rotate(5deg);
 }
+
+
 
 .project-image iframe {
     width: 100%;
