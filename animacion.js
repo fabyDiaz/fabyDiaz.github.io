@@ -23,9 +23,12 @@ window.addEventListener("scroll", function () {
 });
 
 // Contact form submission
+/*
 document
   .querySelector(".contact-form")
   .addEventListener("submit", function (e) {
     e.preventDefault();
     alert("¡Mensaje enviado! Te contactaré pronto.");
   });
+
+  */

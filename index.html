@@ -192,6 +192,30 @@
                         </div>
                     </div>
 
+                     <!-- Skill 4: Automatización de pruebas -->
+                    <div class="accordion-item skill-accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button skill-accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#skill3">
+                                <div class="skill-icon-small">
+                                    <i class="fab fa-wordpress"></i>
+                                </div>
+                                <span>Automatización de pruebas</span>
+                            </button>
+                        </h2>
+                        <div id="skill3" class="accordion-collapse collapse" data-bs-parent="#skillsAccordion">
+                            <div class="accordion-body">
+                                 <br>
+                                <p><strong>Diseño y desarrollo de sitios web personalizados:</strong></p>
+                                <ul>
+                                    <li>Instalación, configuración y personalización de WordPress</li>
+                                    <li>Desarrollo de temas y plantillas a medida</li>
+                                    <li>Integración de plugins, formularios y e-commerce con WooCommerce</li>
+                                    <li>Optimización SEO, velocidad de carga y mantenimiento</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Skill 4: Herramientas y tecnologías -->
                     <div class="accordion-item skill-accordion-item">
                         <h2 class="accordion-header">
@@ -307,17 +331,21 @@
             <h2 class="section-title text-center text-white">Contacto</h2>
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <form class="contact-form">
+                    <form id="contactForm" class="contact-form">
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <input type="text" class="form-control" placeholder="Nombre">
+                                <input type="text" class="form-control" name="wpforms[640][1]" placeholder="Nombre">
                             </div>
                             <div class="col-md-6 mb-3">
-                                <input type="email" class="form-control" placeholder="Email">
+                                <input type="email" class="form-control"  name="wpforms[640][2]" placeholder="Email">
+                            </div>
+
+                             <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control"  name="wpforms[640][4]" placeholder="Asunto">
                             </div>
                         </div>
                         <div class="mb-3">
-                            <textarea class="form-control" rows="5" placeholder="Mensaje"></textarea>
+                            <textarea class="form-control" rows="5"  name="wpforms[640][3]" placeholder="Mensaje"></textarea>
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary-custom">ENVIAR</button>
@@ -325,6 +353,7 @@
                     </form>
                 </div>
             </div>
+
             
             <div class="row mt-5">
                 <div class="col-12 text-center">
@@ -335,7 +364,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="row mt-4">
                 <div class="col-12 text-center">
                     <p>&copy; 2024 Fabiola. Todos los derechos reservados.</p>
