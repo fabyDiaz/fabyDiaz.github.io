@@ -59,6 +59,31 @@
         <div class="container">
             <div class="row g-4">
 
+                
+        <!-- Proyecto 7: Suite de Pruebas API REST con Postman y Newman -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="project-content">
+                    <h5 class="project-title">Suite de Pruebas API REST</h5>
+                    <div class="project-tags">
+                        <span class="tag postman">Postman</span>
+                        <span class="tag">Newman</span>
+                        <span class="tag">API Testing</span>
+                    </div>
+                    <p class="project-description">
+                        Suite automatizada de pruebas para API REST de gestión de productos. Incluye registro/login de usuarios, gestión de productos, validaciones con JWT, y reportes HTML con Newman para integración continua.
+                    </p>
+                    <a href="https://github.com/fabyDiaz/-pruebas-para-API-Rest" class="btn-repo" target="_blank">
+                        <i class="fab fa-github"></i>
+                        Ver Repositorio
+                    </a>
+                </div>
+            </div>
+        </div>
+
                 <!-- Proyecto 6: Plan de Pruebas Automatizado con JMeter -->
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="project-card">
@@ -357,25 +382,32 @@
         <div class="container">
             <h2 class="section-title text-center text-white">Contacto</h2>
             <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <form class="contact-form">
+                <div class="col-lg-6 mx-auto">
+                    <form id="contactForm">
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <input type="text" class="form-control" placeholder="Nombre">
+                                <input type="text" class="form-control" name="your-name" placeholder="Nombre" required>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <input type="email" class="form-control" placeholder="Email">
+                                <input type="email" class="form-control" name="your-email" placeholder="Email" required>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <textarea class="form-control" rows="5" placeholder="Mensaje"></textarea>
+                            <input type="text" class="form-control" name="your-subject" placeholder="Asunto">
                         </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" name="your-message" placeholder="Mensaje"></textarea>
+                        </div>
+                          <!-- Campo honeypot oculto (NO TOCAR) -->
+                        <input type="text" name="website" style="display: none !important;" tabindex="-1" autocomplete="off">
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary-custom">ENVIAR</button>
                         </div>
                     </form>
+    
                 </div>
             </div>
+
             
             <div class="row mt-5">
                 <div class="col-12 text-center">
@@ -401,5 +433,7 @@
       integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
       crossorigin="anonymous"
     ></script>
+    <script src="config.js"></script>
+    <script src="contact-form.js"></script>
   </body>
 </html>

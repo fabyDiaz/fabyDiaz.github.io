@@ -43,21 +43,28 @@
     </nav>
 
     <!-- cabecero -->
-    <section id="inicio" class="hero-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 hero-content">
-                    <h1 class="hero-title">Hola,<br>Soy Fabiola</h1>
-                    <p class="hero-subtitle">Apasionada por el desarrollo web y móvil y el aprendizaje continuo.</p>
-                    <a href="#proyectos" class="btn btn-primary-custom">PROYECTOS</a>
-                </div>
-                    <div class="col-lg-6 text-center hero-image">
-                        <img src="img/app-marketing-illustration-01-1.png" alt="">
-                    </div>
+<!-- OPCIÓN 3: GitHub con estilo outline (borde) -->
+<section id="inicio" class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 hero-content">
+                <h1 class="hero-title">Hola,<br>Soy Fabiola</h1>
+                <p class="hero-subtitle">Apasionada por el desarrollo web y móvil y el aprendizaje continuo.</p>
+                
+                <div class="hero-actions">
+                    <a href="proyectos.html" class="btn btn-primary-custom">PROYECTOS</a>
+                    <a href="https://github.com/fabyDiaz" class="github-icon-outline">
+                        <i class="fab fa-github"></i>
+                    </a>
                 </div>
             </div>
+            <div class="col-lg-6 text-center hero-image">
+                <img src="img/app-marketing-illustration-01-1.png" alt="">
+            </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <section class="me-section">
          <!-- seccion sobre mi -->
@@ -332,25 +339,29 @@
         <div class="container">
             <h2 class="section-title text-center text-white">Contacto</h2>
             <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <form id="contactForm" class="contact-form">
+                <div class="col-lg-6 mx-auto">
+                    <form id="contactForm">
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <input type="text" class="form-control" name="wpforms[640][1]" placeholder="Nombre">
+                                <input type="text" class="form-control" name="your-name" placeholder="Nombre" required>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <input type="email" class="form-control"  name="wpforms[640][2]" placeholder="Email">
+                                <input type="email" class="form-control" name="your-email" placeholder="Email" required>
                             </div>
-                        </div> <div class="mb-3">
-                                <input type="text" class="form-control"  name="wpforms[640][4]" placeholder="Asunto">
-                            </div>
-                        <div class="mb-3">
-                            <textarea class="form-control" rows="5"  name="wpforms[640][3]" placeholder="Mensaje"></textarea>
                         </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" name="your-subject" placeholder="Asunto">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" name="your-message" placeholder="Mensaje"></textarea>
+                        </div>
+                          <!-- Campo honeypot oculto (NO TOCAR) -->
+                        <input type="text" name="website" style="display: none !important;" tabindex="-1" autocomplete="off">
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary-custom">ENVIAR</button>
                         </div>
                     </form>
+    
                 </div>
             </div>
 
@@ -378,5 +389,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="animacion.js"></script>
+    <script src="config.js"></script>
+    <script src="contact-form.js"></script>
   </body>
 </html>

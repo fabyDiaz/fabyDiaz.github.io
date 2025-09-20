@@ -156,6 +156,56 @@ html {
     transform: translateY(-10px) scale(1.02);
 }
 
+/* Contenedor para el botón y el ícono de GitHub en el header */
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+
+
+/* Variante con borde transparente para que combine mejor */
+.github-icon-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    color: white; /* Mismo color que el botón */
+    border: 2px solid white;
+    border-radius: 50%;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.github-icon-outline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.github-icon-outline:hover::before {
+    left: 100%;
+}
+
+.github-icon-outline:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+}
+
+
 /* ===============================
    BOTONES
    =============================== */
@@ -516,6 +566,16 @@ html {
 .tag.spring { background: #dcfce7; color: #15803d; }
 .tag.angular { background: #fee2e2; color: #dc2626; }
 .tag.scratch { background: #fef3c7; color: #d97706; }
+/* Colores específicos para tags - NUEVOS */
+.tag.jmeter { background: #fee2e2; color: #dc2626; }
+.tag.performance { background: #f3e8ff; color: #9333ea; }
+.tag.testing { background: #ecfdf5; color: #059669; }
+.tag.postman { background: #fff7ed; color: #ea580c; }
+.tag.newman { background: #f0f9ff; color: #0284c7; }
+.tag.apitesting { background: #fef2f2; color: #b91c1c; }
+.tag.postgresql { background: #eff6ff; color: #2563eb; }
+.tag.woocommerce { background: #f0fdf4; color: #16a34a; }
+.tag.divi { background: #fdf4ff; color: #c026d3; }
 
 .btn-repo {
     background: var(--primary-color);
