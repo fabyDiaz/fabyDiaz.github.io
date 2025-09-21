@@ -4,6 +4,10 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
     const submitButton = this.querySelector('button[type="submit"]');
     const originalText = submitButton.textContent;
     
+    // Configuración directa (no sensible, es una URL pública)
+    const API_ENDPOINT = 'https://fabydev.cl/wp-json/simple-contact/v1/send';
+    const IS_LOCAL = window.location.hostname.includes('localhost') || window.location.hostname.includes('127.0.0.1');
+    
     // Validación básica del lado cliente
     const name = this.querySelector('[name="your-name"]').value.trim();
     const email = this.querySelector('[name="your-email"]').value.trim();
@@ -24,16 +28,23 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
 
     const formData = new FormData(this);
     
-    // Usar configuración externa
-    const endpoint = CONFIG?.API_ENDPOINT || 'https://fabydev.cl/wp-json/simple-contact/v1/send';
+    // Debug solo en local
+    if (IS_LOCAL) {
+        console.log('Entorno: Local');
+        console.log('Endpoint:', API_ENDPOINT);
+        console.log('Datos del formulario:');
+        for (let [key, value] of formData.entries()) {
+            console.log(key, value);
+        }
+    }
     
-    fetch(endpoint, {
+    fetch(API_ENDPOINT, {
         method: "POST",
         body: formData,
         mode: 'cors'
     })
     .then(response => {
-        if (CONFIG?.DEBUG) {
+        if (IS_LOCAL) {
             console.log("Status:", response.status);
         }
         
@@ -46,7 +57,7 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
         return response.json();
     })
     .then(data => {
-        if (CONFIG?.DEBUG) {
+        if (IS_LOCAL) {
             console.log("Respuesta:", data);
         }
         
@@ -67,10 +78,14 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
         } else if (error.message.includes("400")) {
             userMessage = "⚠️ Por favor verifica que todos los campos estén correctos.";
         } else if (error.message.includes("403")) {
-            userMessage = "🚫 Acceso no autorizado. Contacta al administrador.";
+            userMessage = "🚫 Acceso no autorizado. El servidor no permite peticiones desde este dominio.";
+        } else if (error.message.includes("404")) {
+            userMessage = "🔗 Endpoint no encontrado. Verifica que el plugin esté activado.";
+        } else if (error.message.includes("Failed to fetch")) {
+            userMessage = "🌐 Error de conexión. Verifica tu internet o que el servidor esté funcionando.";
         }
         
-        showMessage(userMessage, "error");
+        showMessage(userMessage + (IS_LOCAL ? '\nDetalles: ' + error.message : ''), "error");
     })
     .finally(() => {
         // Restaurar botón
