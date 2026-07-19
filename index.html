@@ -258,15 +258,33 @@
     <section id="proyectos" class="projects-section section-padding">
         <div class="container">
             <h2 class="section-title text-center">Proyectos Destacados</h2>
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-lg-6  text-center">
-                    <img src="img/cellphone-wallet-1.webp" alt="">
+                    <img src="img/cellphone-wallet-1.webp" alt="AlkeWallet - App de billetera digital" class="phone-preview-img" role="button" data-bs-toggle="modal" data-bs-target="#phoneImageModal">
                 </div>
                 <div class="col-lg-6">
                     <h3 class="mb-4">AlkeWallet</h3>
                     <p class="mb-4">Aplicación móvil de billetera digital desarrollada con kotlin. Permite a los usuarios gestionar sus finanzas personales de manera segura y eficiente, con funciones de transferencias, pagos y seguimiento de gastos.</p>
                     <p class="mb-4">Implementa las mejores prácticas de seguridad y ofrece una experiencia de usuario intuitiva y moderna.</p>
                     <a href="https://github.com/fabyDiaz/Modulo5--Arquitectura-y-ciclo-de-vida-de-componentes-Android/tree/version5" class="btn btn-primary-custom" target="_blank">VER PROYECTO</a>
+                </div>
+            </div>
+
+            <!-- Proyecto: IoT Data API -->
+            <div class="row align-items-center project-diagram-row">
+                <div class="col-lg-6 order-lg-2 text-center">
+                    <img src="img/imagen arquitectura proyecto iot.png" alt="Arquitectura del proyecto IoT Data API: dispositivos IoT, Apache Kafka, API REST con Spring Boot y PostgreSQL" class="img-fluid project-diagram-img" role="button" data-bs-toggle="modal" data-bs-target="#iotImageModal">
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <h3 class="mb-4">IoT Data API</h3>
+                    <p class="mb-4">API REST para la recolección, almacenamiento y consulta de datos de dispositivos IoT (ESP32, Zigbee). Los sensores envían su información vía HTTP y Apache Kafka, que es procesada por un Kafka Consumer y almacenada de forma segura en PostgreSQL.</p>
+                    <p class="mb-4">Permite consultar y filtrar la información por compañía, ubicación y sensor. Cuenta con una arquitectura segura gracias a Spring Security, documentación interactiva con Swagger, y está containerizada con Docker para facilitar su despliegue.</p>
+                    <a href="https://github.com/fabyDiaz/Proyecto-final-e1/tree/proyecto-refresh" class="btn btn-primary-custom" target="_blank">VER PROYECTO</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-center mt-5">
                     <a href="proyectos.html" class="btn btn-primary-custom">OTROS PROYECTOS</a>
                 </div>
             </div>
@@ -400,6 +418,29 @@
             </div>
         </div>
     </section>
+
+    <!-- Modal / Lightbox: imagen del celular AlkeWallet, se agranda y gira al abrir -->
+    <div class="modal fade image-lightbox" id="phoneImageModal" tabindex="-1" aria-labelledby="phoneImageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <button type="button" class="btn-close btn-close-white image-lightbox-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                <div class="phone-spin-stage">
+                    <img src="img/cellphone-wallet-1.webp" alt="AlkeWallet ampliado" class="img-fluid phone-lightbox-img" id="phoneLightboxImg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal / Lightbox: imagen ampliada del diagrama IoT Data API -->
+    <div class="modal fade image-lightbox" id="iotImageModal" tabindex="-1" aria-labelledby="iotImageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <button type="button" class="btn-close btn-close-white image-lightbox-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                <img src="img/imagen arquitectura proyecto iot.png" alt="Arquitectura del proyecto IoT Data API ampliada" class="img-fluid image-lightbox-img">
+            </div>
+        </div>
+    </div>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
@@ -408,5 +449,19 @@
     <script src="animacion.js"></script>
     <script src="config.js"></script>
     <script src="contact-form.js"></script>
+    <script>
+      // Reinicia la animación de "giro" del celular cada vez que se abre el modal.
+      // (Una animación CSS solo se reproduce una vez por elemento; para que se
+      // repita hay que quitar la clase, forzar un reflow y volver a agregarla)
+      const phoneModal = document.getElementById('phoneImageModal');
+      const phoneImg = document.getElementById('phoneLightboxImg');
+      if (phoneModal && phoneImg) {
+        phoneModal.addEventListener('show.bs.modal', () => {
+          phoneImg.classList.remove('phone-spin-animate');
+          void phoneImg.offsetWidth; // fuerza el reflow
+          phoneImg.classList.add('phone-spin-animate');
+        });
+      }
+    </script>
   </body>
 </html>

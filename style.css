@@ -150,6 +150,7 @@ html {
     height: auto;
     filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
     transition: var(--transition);
+    animation: float 6s ease-in-out infinite;
 }
 
 .hero-image img:hover {
@@ -318,14 +319,11 @@ html {
 .about-section img {
     max-width: 100%;
     height: auto;
-    /*border-radius: var(--border-radius);
-    box-shadow: var(--shadow-light);*/
     transition: var(--transition);
 }
 
 .about-section img:hover {
     transform: scale(1.02);
-    /*box-shadow: var(--shadow-medium);*/
 }
 
 /* ===============================
@@ -410,20 +408,6 @@ html {
 /* ===============================
    SECCIÓN DE PROYECTOS
    =============================== */
-   /*
-.projects-section {
-    background: var(--dark-color);
-    color: white;
-}
-
-.projects-section .section-title {
-    color: white;
-}
-
-.projects-section .section-title::after {
-    background: var(--primary-color);
-}
-*/
 .projects-section {
     background: white;
     color: var(--dark-color);
@@ -439,14 +423,114 @@ html {
 .projects-section img {
     max-width: 40%;
     height: auto;
-    /*border-radius: var(--border-radius);
-    box-shadow: var(--shadow-medium);*/
     transition: var(--transition);
 }
 
 .projects-section img:hover {
     transform: translateY(-10px) scale(1.02);
-    /*box-shadow: var(--shadow-heavy);*/
+}
+
+.phone-preview-img {
+    cursor: zoom-in;
+}
+
+/* Fila que separa el proyecto de diagrama de los demás */
+.project-diagram-row {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(45, 52, 54, 0.1);
+}
+
+/* Imagen de diagrama/infografía (más ancha que las capturas de app).
+   Usamos ".projects-section .project-diagram-img" (dos clases) para que
+   gane con seguridad sobre ".projects-section img" (clase + elemento),
+   que tiene mayor especificidad que una sola clase y antes ganaba el conflicto. */
+.projects-section .project-diagram-img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+    cursor: zoom-in;
+}
+
+.projects-section .project-diagram-img:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: var(--shadow-medium);
+}
+
+/* ===============================
+   LIGHTBOX / MODAL DE IMAGEN AMPLIADA
+   =============================== */
+.image-lightbox .modal-content {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.image-lightbox-img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--shadow-heavy);
+}
+
+.image-lightbox-close {
+    position: absolute;
+    top: -45px;
+    right: 0;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    padding: 0.6rem;
+    transition: var(--transition);
+}
+
+.image-lightbox-close:hover {
+    background-color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+/* Modal del celular: más angosto que el del diagrama, y con perspectiva
+   para que la animación de giro se vea en 3D y no aplastada */
+#phoneImageModal .modal-content {
+    align-items: center;
+}
+
+.phone-spin-stage {
+    perspective: 1200px;
+}
+
+.phone-lightbox-img {
+    max-height: 80vh;
+    width: auto;
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--shadow-heavy);
+    opacity: 0;
+}
+
+/* Se agranda desde chico y da una vuelta completa (360°) antes de quedar quieto */
+@keyframes phoneSpinIn {
+    0% {
+        transform: scale(0.3) rotateY(0deg);
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    80% {
+        transform: scale(1.05) rotateY(360deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) rotateY(360deg);
+        opacity: 1;
+    }
+}
+
+.phone-lightbox-img.phone-spin-animate {
+    animation: phoneSpinIn 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
 /* ===============================
@@ -660,14 +744,11 @@ html {
     width: 150px;
     max-width: 150px;
     height: auto;
-   /* border-radius: var(--border-radius);
-    box-shadow: var(--shadow-light);*/
     transition: var(--transition);
 }
 
 .img-certificaction:hover {
     transform: scale(1.05);
-    /*box-shadow: var(--shadow-medium);*/
 }
 
 /* ===============================
@@ -766,10 +847,6 @@ html {
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-20px); }
-}
-
-.hero-image img {
-    animation: float 6s ease-in-out infinite;
 }
 
 @keyframes slideInFromLeft {
